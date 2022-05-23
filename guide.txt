@@ -1,0 +1,28 @@
+This a simple django blog rest api serving a react application.
+It uses JWT for authentication and has permissions set on views.
+The views contains both  class and function based views (CBV and FBV) basically 
+doing the same thing.  
+the path 'http://127.0.0.1:8000/v1/doc/' gives you a documentation of the api (paths, views, etc).
+(Assuming app will be run locally) 
+
+
+The main project is called the Blog 
+It contains two simple django apps. baseapp and baseapi
+
+The baseapp contains a model which contains two models (User and Post)
+The baseapp also contains tests.py.
+The test.py  contains tests that specifically tests all the operations on the model. 
+A library called coverage was used to do the test. It identifies classes and functions to test.
+(coverge run manage.py test)
+
+the baseapi contains the views of the applications, serializers
+and the a tests.py file.
+These tests specifically test the views of the api.Again coverage was used to  identify 
+classes and functions to test.
+
+Uncommenting permission_classes will actually make the test behave differently. This was 
+deliberately done to have idea about what parameters makes our test fail.By default all tests
+are passed. Try uncommenting permission_classes and some tests will fail.
+
+** to start the app. Inyour virtual enviroment install the packages needed as follows:
+pip install -r requirements.txt
